@@ -211,11 +211,11 @@
                           </td>
                           
                           <td class="td-actions">
-              <a href="mahasiswa_update.php?id=<?= $d['NO_GUDANG'] ?>">
+              <a href="up_gudang.php?id=<?= $d['NO_GUDANG'] ?>">
                             <button type="button" rel="tooltip" class="btn btn-success">
                               <i class="material-icons">edit</i>
                             </button></a>
-              <a href="delete.php?id=<?= $d['NO_GUDANG'] ?>" 
+              <a href="del_gudang.php?id=<?= $d['NO_GUDANG'] ?>" 
               onclick="return confirm('Anda yakin akan menghapus data ini?')">
                             <button type="button" rel="tooltip" class="btn btn-danger">
                               <i class="material-icons">close</i>

@@ -1,27 +1,28 @@
 <?php
 require_once 'koneksi.php';
 if (isset($_POST['submit'])) {
+  $no_gudang = $_POST['no_gudang'];
   $id_toko = $_POST['id_toko'];
-  $nama_toko = $_POST['nama_toko'];
-  $alamat = $_POST['alamat'];
-  $npwp = $_POST['npwp'];
+  $nama_gudang = $_POST['nama_gudang'];
+  $kapasitas = $_POST['kapasitas'];
+  
 
  
   
   // update data berdasarkan id_produk yg dikirimkan
   
-	$query = "UPDATE  toko_1001  SET NAMA_TOKO ='".$nama_toko."', ALAMAT ='".$alamat."', NPWP ='".$npwp."'";
+	$query = "UPDATE  gudang_1001  SET NAMA_GUDANG ='".$nama_gudang."', KAPASITAS ='".$kapasitas."'";
 	$statement = oci_parse($con,$query);
 	$r = oci_execute($statement,OCI_DEFAULT);
 	 $res = oci_commit($con) ;
   if ($res) {
     // pesan jika data berubah
-    echo "<script>alert('Data Toko berhasil diubah'); window.location.href='toko.php'</script>";
+    echo "<script>alert('Data Stok Obat berhasil diubah'); window.location.href='gudang.php'</script>";
   } else {
     // pesan jika data gagal diubah
-    echo "<script>alert('Data Toko gagal diubah'); window.location.href='toko.php'</script>";
+    echo "<script>alert('Data Stok Obat gagal diubah'); window.location.href='gudang.php'</script>";
   }
 } else {
   // jika coba akses langsung halaman ini akan diredirect ke halaman index
-  header('Location: toko.php'); 
+  header('Location: gudang.php'); 
 }
